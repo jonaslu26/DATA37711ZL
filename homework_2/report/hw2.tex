@@ -140,7 +140,7 @@ For $j=1,\dots,h$ draw $w_j\sim N(0,I_2/\sigma^2)$ and $b_j\sim U[0,2\pi]$, and 
 \]
 With design matrix $\Phi$ and a separate intercept, fit
 \[
-(\hat\beta,\hat a)=\arg\min_{\beta,a}\ \|y-\Phi\beta-a\mathbf 1\|_2^2+\lambda\|\beta\|_2^2.
+(\hat\beta,\hat a)=\arg\min_{\beta,a}\ \frac1n\|y-\Phi\beta-a\mathbf 1\|_2^2+\lambda\|\beta\|_2^2.
 \]
 I fix $D=1000$ and $\lambda=10^{-3}$ and sweep $\sigma$. Very small $\sigma$ gives high-frequency features and severe overfitting (training MSE about $10^{-4}$ but validation MSE about 6.9 at $\sigma=0.05$); very large $\sigma$ oversmooths. The best value is $\sigma=3$, with validation MSE 0.0359.
 
