@@ -1,0 +1,116 @@
+{
+  "cardinality": {
+    "StockCode": {
+      "unique": 3665,
+      "median_rows_per_level": 49.0,
+      "levels_with_<5_rows": 472
+    },
+    "CustomerID": {
+      "unique": 4339,
+      "median_rows_per_level": 41.0,
+      "levels_with_<5_rows": 228
+    }
+  },
+  "n": 397924,
+  "splits": [
+    278546,
+    59689,
+    59689
+  ],
+  "unseen_frac_test": {
+    "StockCode": 0.0005026051701318501,
+    "CustomerID": 0.00040208413610548006
+  },
+  "onehot_dense_gb": 8.917928736,
+  "rows": [
+    {
+      "model": "Constant (train mean)",
+      "test_mse": 1.0143887667365017
+    },
+    {
+      "model": "Target enc. (in-sample) + HistGB",
+      "iters": 400,
+      "val_mse": 0.3277509394703575,
+      "train_mse": 0.31038933929067997,
+      "test_mse": 0.33764158214124634
+    },
+    {
+      "model": "Target enc. (out-of-fold) + HistGB",
+      "iters": 50,
+      "val_mse": 0.3383860493277985,
+      "train_mse": 0.34679321602847435,
+      "test_mse": 0.34993228976987495
+    },
+    {
+      "model": "Embeddings (16+16) + MLP",
+      "val_mse": 0.28349652886390686,
+      "test_mse": 0.2949605521579641,
+      "epochs": 24
+    },
+    {
+      "model": "Embeddings + target enc. (in-sample) + MLP",
+      "val_mse": 0.2816622853279114,
+      "test_mse": 0.28947205803690307,
+      "epochs": 19
+    },
+    {
+      "model": "Embeddings + target enc. (out-of-fold) + MLP",
+      "val_mse": 0.284670352935791,
+      "test_mse": 0.2928436992226746,
+      "epochs": 19
+    }
+  ],
+  "by_train_frequency": [
+    {
+      "train_rows": "0-0",
+      "n": 30,
+      "TE+GB": 0.5144884187157138,
+      "Emb": 0.3903125917643862,
+      "Both": 0.39165522906903233
+    },
+    {
+      "train_rows": "1-9",
+      "n": 823,
+      "TE+GB": 0.5351093220681286,
+      "Emb": 0.4039351957157795,
+      "Both": 0.4217297252875015
+    },
+    {
+      "train_rows": "10-99",
+      "n": 16491,
+      "TE+GB": 0.3689188836922935,
+      "Emb": 0.3065325819705467,
+      "Both": 0.3081338165810165
+    },
+    {
+      "train_rows": "100-inf",
+      "n": 42345,
+      "TE+GB": 0.33882247038566327,
+      "Emb": 0.28826835623222147,
+      "Both": 0.2843140765823828
+    }
+  ],
+  "nn_examples": {
+    "85123A": [
+      "85032B",
+      "23580",
+      "23272",
+      "23242",
+      "21518"
+    ],
+    "22423": [
+      "22317",
+      "20819",
+      "47341A",
+      "23415",
+      "48173C"
+    ],
+    "85099B": [
+      "21161",
+      "20664",
+      "35599B",
+      "35610B",
+      "21875"
+    ]
+  }
+}
