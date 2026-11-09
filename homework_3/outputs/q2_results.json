@@ -1,0 +1,24 @@
+{
+  "RandomForest": {
+    "n_configs": 600,
+    "best_params": {
+      "bootstrap": false,
+      "max_depth": 16,
+      "max_features": 0.2,
+      "min_samples_leaf": 1,
+      "n_estimators": 50
+    },
+    "val_mse": 0.3615072995845508,
+    "test_mse": 0.43928148377662884
+  },
+  "KNN": {
+    "n_configs": 600,
+    "best_params": {
+      "n_neighbors": 16,
+      "p": 1,
+      "weights": "distance"
+    },
+    "val_mse": 0.40003884962980596,
+    "test_mse": 0.461477714605591
+  }
+}
